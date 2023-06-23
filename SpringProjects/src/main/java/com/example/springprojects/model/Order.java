@@ -3,7 +3,6 @@ package com.example.springprojects.model;
 import lombok.*;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Data
@@ -21,9 +20,6 @@ public class Order {
         return id;
     }
 
-    public LocalDate getDate() {
-        return date;
-    }
 
     public double getCost() {
         return cost;
