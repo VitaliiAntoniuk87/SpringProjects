@@ -28,8 +28,9 @@ public class OrderService {
     }
 
     public OrderDTO getOrderById(int id) {
-        return orderRepository.findById((long) id)
-                .map(o -> OrderConverter.toOrderDto(o, productRepository.findAllByOrderId(id))).orElseThrow();
+        return orderRepository.findById(id)
+                .map(o -> OrderConverter.toOrderDto(o, productRepository.findAllByOrderId(id)))
+                .orElseThrow(IllegalArgumentException::new);
     }
 
     public OrderDTO save(OrderDTO orderDTO) {
